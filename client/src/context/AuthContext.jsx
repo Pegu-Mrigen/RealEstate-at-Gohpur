@@ -47,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post(`${API_URL}/auth/login`, {
+      const res = await axios.post(`https://real-estate-at-gohpur-server.vercel.app/api/auth/login`, {
         email,
         password,
       });
