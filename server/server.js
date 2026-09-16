@@ -59,13 +59,16 @@ connectDB();
 // );
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://real-estate-at-gohpur.vercel.app"
+  "https://real-estate-at-gohpur.vercel.app/api"
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
       // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+
+      console.log("👉 SERVER RECEIVED ORIGIN:", origin);
+
       if (!origin) return callback(null, true);
       
       if (allowedOrigins.indexOf(origin) !== -1) {

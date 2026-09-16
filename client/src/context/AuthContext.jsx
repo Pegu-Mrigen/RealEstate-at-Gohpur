@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import API_URL from "./../config";
 
-const API_URL="https://real-estate-at-gohpur-server.vercel.app/api"
+const API_URL = "https://real-estate-at-gohpur-server.vercel.app/api";
 
 const AuthContext = createContext();
 
@@ -47,10 +47,14 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post(`https://real-estate-at-gohpur-server.vercel.app/api/auth/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `https://real-estate-at-gohpur-server.vercel.app/api/auth/login`,
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
 
       const { token, user } = res.data;
       setToken(token);
