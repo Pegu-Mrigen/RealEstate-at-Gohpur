@@ -18,7 +18,10 @@ const PORT = 5000;
 
 connectDB();
 
-const allowedOrigins = ["http://localhost:5173"].filter(Boolean);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://real-estate-at-gohpur.vercel.app",
+].filter(Boolean);
 
 app.use(
   cors({
