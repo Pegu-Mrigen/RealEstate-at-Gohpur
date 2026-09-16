@@ -12,7 +12,7 @@ const AdminContacts = () => {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get(`${API_URL}/contact`, {
+      const res = await axios.get(`https://real-estate-at-gohpur-server.vercel.app/api/contact`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

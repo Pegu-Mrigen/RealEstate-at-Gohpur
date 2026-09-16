@@ -1,7 +1,9 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import API_URL from "./../config";
+// import API_URL from "./../config";
+
+const API_URL="https://real-estate-at-gohpur-server.vercel.app/api"
 
 const AuthContext = createContext();
 

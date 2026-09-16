@@ -27,7 +27,7 @@ export const ChatContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      const newSocket = io(API_URL);
+      const newSocket = io("https://real-estate-at-gohpur-server.vercel.app/api");
       setSocket(newSocket);
 
       newSocket.on("receiveMessage", (data) => {
