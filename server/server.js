@@ -59,7 +59,8 @@ connectDB();
 // );
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://real-estate-at-gohpur.vercel.app/api"
+  "https://real-estate-at-gohpur.vercel.app/api",
+  "https://real-estate-at-gohpur.vercel.app"
 ];
 
 app.use(
