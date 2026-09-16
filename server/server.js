@@ -76,6 +76,7 @@ app.use(
     },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
+    optionsSuccessStatus: 200 // Essential for legacy browsers and preflight stability
   })
 );
 
