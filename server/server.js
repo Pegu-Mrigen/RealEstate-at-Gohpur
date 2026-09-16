@@ -13,31 +13,39 @@ import contactRouter from "./routes/contactRouter.js";
 import adminRouter from "./routes/adminRouter.js";
 import chatRouter from "./routes/chatRouter.js";
 
-
 const app = express();
 
 const PORT = 5000;
 
 connectDB();
 
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://real-estate-at-gohpur.vercel.app",
+// ].filter(Boolean);
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS!"));
+//       }
+//     },
+//   })
+// );
 const allowedOrigins = [
   "http://localhost:5173",
   "https://real-estate-at-gohpur.vercel.app",
-].filter(Boolean);
-
+];
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS!"));
-      }
-    },
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
-// const allowedOrigins=["http://localhost:5173", "https://real-estate-at-gohpur.vercel.app" ]
-// app.use(cors({origin:allowedOrigins, credentials: true }));
 
 app.use(express.json());
 
